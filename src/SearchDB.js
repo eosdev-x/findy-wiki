@@ -23,6 +23,11 @@ const SearchDB = () => {
 
   return (
     <div className="container">
+      <h1>
+        <img class="logo" src="
+        https://raw.githubusercontent.com/eosdev-x/eosdev-x.github.io/master/eosdev.png" alt="eosdev logo" />
+        eosdev.eth &#128039 &#9889
+      </h1>
       <h1>Flight Log Search</h1>
       <input
         id="searchBox"
