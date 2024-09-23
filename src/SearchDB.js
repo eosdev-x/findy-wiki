@@ -25,8 +25,8 @@ const SearchDB = () => {
     <div className="container">
       <h1>
         <img class="logo" src="
-        https://raw.githubusercontent.com/eosdev-x/eosdev-x.github.io/master/eosdev.png" alt="eosdev logo" />
-        eosdev.eth &#128039 &#9889
+        https://raw.githubusercontent.com/eosdev-x/findy-wiki/refs/heads/main/src/logo.svg" alt="findy logo" />
+        findy.wiki
       </h1>
       <h1>Flight Log Search</h1>
       <input
