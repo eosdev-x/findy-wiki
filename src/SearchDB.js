@@ -11,7 +11,7 @@ const SearchDB = () => {
   const handleSearch = async () => {
     const { data, error } = await supabase
       .from("MainList")
-      .select("*")
+      .select("first_last")
       .ilike("first_last", `%${query}%`);
 
     if (error) {
@@ -37,8 +37,7 @@ const SearchDB = () => {
       <div id="results">
         {results.map((result, index) => (
           <div key={index}>
-            {/* Render your result here */}
-            {JSON.stringify(result)}
+            Yes, {result.first_last} is on the list!
           </div>
         ))}
       </div>
