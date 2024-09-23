@@ -58,3 +58,9 @@ html {
         20px 20px 60px #bebebe,
         -20px -20px 60px #ffffff;
 }
+
+    /* Logo styles */
+.logo {
+    height: 100px;
+    margin-right: .5rem;
+}

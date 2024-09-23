@@ -23,6 +23,11 @@ const SearchDB = () => {
 
   return (
     <div className="container">
+      <h1>
+        <img class="logo" src="
+        https://raw.githubusercontent.com/eosdev-x/findy-wiki/refs/heads/main/src/logo.svg" alt="findy logo" />
+        findy.wiki
+      </h1>
       <h1>Flight Log Search</h1>
       <input
         id="searchBox"
