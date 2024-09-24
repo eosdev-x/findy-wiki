@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import "./SearchDB.css";
 
-const supabase = createClient("https://pshfszzzbhdbuwqxsbte.supabase.co", "eyJhbGOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBzaGZzenp6YmhkYnV3cXhzYnRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjcwNTg0NjcsImV4cCI6MjA0MjYzNDQ2N30.1_K8Heml71eLsjLxp63Emkkf3p0HBYwL_VCD6WX-_tg");
+const supabase = createClient("https://pshfszzzbhdbuwqxsbte.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBzaGZzenp6YmhkYnV3cXhzYnRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjcwNTg0NjcsImV4cCI6MjA0MjYzNDQ2N30.1_K8Heml71eLsjLxp63Emkkf3p0HBYwL_VCD6WX-_tg");
 
 const SearchDB = () => {
   const [query, setQuery] = useState("");
@@ -13,7 +13,7 @@ const SearchDB = () => {
   const handleSearch = async () => {
     if (query.trim() === "") {
       setResults([]);
-      setSearchInitiated(false);
+      setSearchInitiated(true);
       setErrorMessage("Please enter a name to search");
       return;
     }
@@ -65,7 +65,7 @@ const SearchDB = () => {
             </div>
           ))
         ) : (
-          searchInitiated && query.trim() !== "" && (
+          searchInitiated && results.length === 0 && (
             <div>
               Great news, {query} is not on the list!
             </div>
