@@ -13,11 +13,17 @@ const SearchDB = () => {
       .from("MainList")
       .select("first_last")
       .ilike("first_last", `%${query}%`);
-
+  
     if (error) {
       console.error(error);
     } else {
       setResults(data);
+    }
+  };
+  
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
     }
   };
 
@@ -34,17 +40,24 @@ const SearchDB = () => {
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown}  // Add this line
         placeholder="Search..."
       />
       <button id="searchButton" onClick={handleSearch}>
         Search
       </button>
       <div id="results">
-        {results.map((result, index) => (
-          <div key={index}>
-            Yes, {result.first_last} is on the list!
+        {results.length > 0 ? (
+          results.map((result, index) => (
+            <div key={index}>
+              Yes, {result.first_last} is on the list!
+            </div>
+          ))
+        ) : (
+          <div>
+            Great news, {query} is not on the list!
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
