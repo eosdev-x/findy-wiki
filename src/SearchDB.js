@@ -47,9 +47,11 @@ const SearchDB = () => {
   return (
     <div className="container card bg-primary shadow-inset border-light p-3">
       <div class="card-body shadow-soft border border-light rounded p-4">
-      <h1>
-        <img className="logo" src="https://raw.githubusercontent.com/eosdev-x/findy-wiki/refs/heads/main/src/logo.svg" alt="findy logo" />
-      </h1>
+        <div className="profile-image-container">
+        <div class="profile-image shadow-inset border rounded-circle p-3 mt-5">
+          <img class="rounded-circle" src="https://raw.githubusercontent.com/eosdev-x/findy-wiki/refs/heads/main/src/logo.svg" alt="findy logo" />
+        </div>
+        </div>
       <h1>Flight Log Search</h1>
       <input
         id="searchBox"

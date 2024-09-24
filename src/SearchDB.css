@@ -127,6 +127,26 @@ html {
     padding: 20px;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
@@ -31716,6 +31736,9 @@ textarea[resize="horizontal"] {
 .profile-image {
     width: 10rem;
     height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-image-small {
