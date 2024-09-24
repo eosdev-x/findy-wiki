@@ -13,7 +13,7 @@ const SearchDB = () => {
   const handleSearch = async () => {
     if (query.trim() === "") {
       setResults([]);
-      setSearchInitiated(true);
+      setSearchInitiated(false);
       setErrorMessage("Please enter a name to search");
       return;
     }
@@ -25,11 +25,17 @@ const SearchDB = () => {
 
     if (error) {
       console.error(error);
+      setErrorMessage("An error occurred while searching. Please try again.");
+      setResults([]);
     } else {
       setResults(data);
+      if (data.length === 0) {
+        setErrorMessage(`Great news, ${query} is not on the list!`);
+      } else {
+        setErrorMessage(""); // Clear the error message if search is successful
+      }
     }
     setSearchInitiated(true);
-    setErrorMessage(""); // Clear the error message if search is successful
   };
 
   const handleKeyDown = (event) => {
@@ -58,19 +64,11 @@ const SearchDB = () => {
       </button>
       {errorMessage && <div className="error">{errorMessage}</div>}
       <div id="results">
-        {results.length > 0 ? (
-          results.map((result, index) => (
-            <div key={index}>
-              Yes, {result.first_last} is on the list!
-            </div>
-          ))
-        ) : (
-          searchInitiated && results.length === 0 && (
-            <div>
-              Great news, {query} is not on the list!
-            </div>
-          )
-        )}
+        {results.length > 0 && results.map((result, index) => (
+          <div key={index}>
+            Yes, {result.first_last} is on the list!
+          </div>
+        ))}
       </div>
     </div>
   );
