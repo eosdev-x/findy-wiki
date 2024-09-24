@@ -45,10 +45,10 @@ const SearchDB = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container card bg-primary shadow-inset border-light p-3">
+      <div class="card-body shadow-soft border border-light rounded p-4">
       <h1>
         <img className="logo" src="https://raw.githubusercontent.com/eosdev-x/findy-wiki/refs/heads/main/src/logo.svg" alt="findy logo" />
-        findy.wiki
       </h1>
       <h1>Flight Log Search</h1>
       <input
@@ -59,16 +59,17 @@ const SearchDB = () => {
         onKeyDown={handleKeyDown}
         placeholder="Search..."
       />
-      <button id="searchButton" onClick={handleSearch}>
-        Search
+      <button class="btn btn-primary mb-3 mb-lg-0 mr-3 animate-right-3" onClick={handleSearch}>
+        Search The Flight Log
       </button>
-      {errorMessage && <div className="error">{errorMessage}</div>}
+      {errorMessage && <div id="results" className="error">{errorMessage}</div>}
       <div id="results">
         {results.length > 0 && results.map((result, index) => (
           <div key={index}>
             Yes, {result.first_last} is on the list!
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
