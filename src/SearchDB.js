@@ -59,10 +59,10 @@ const SearchDB = () => {
         onKeyDown={handleKeyDown}
         placeholder="Search..."
       />
-      <button class="btn btn-primary mb-3 mb-lg-0 mr-3" onClick={handleSearch}>
+      <button class="btn btn-primary mb-3 mb-lg-0 mr-3 animate-right-3" onClick={handleSearch}>
         Search The Flight Log
       </button>
-      {errorMessage && <div className="error">{errorMessage}</div>}
+      {errorMessage && <div id="results" className="error">{errorMessage}</div>}
       <div id="results">
         {results.length > 0 && results.map((result, index) => (
           <div key={index}>

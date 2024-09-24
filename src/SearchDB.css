@@ -92,6 +92,7 @@ html {
 .container {
     text-align: center;
     padding: 40px;
+    margin-top: 2em;
 }
 
 #searchBox,
@@ -102,11 +103,8 @@ html {
     border: none;
     border-radius: 10px;
     margin: 10px 0;
-    background: #e0e0e0;
-    box-shadow:
-        inset 5px 5px 10px #bebebe,
-        inset -5px -5px 10px #ffffff;
-    outline: none;
+    margin-right: 1em;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
 }
 
 #searchButton {
