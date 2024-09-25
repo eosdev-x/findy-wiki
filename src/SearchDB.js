@@ -45,6 +45,7 @@ const SearchDB = () => {
   };
 
   return (
+    <div>
     <div className="container card bg-primary shadow-inset border-light p-3">
       <div class="card-body shadow-soft border border-light rounded p-4">
         <div className="profile-image-container">
@@ -73,6 +74,14 @@ const SearchDB = () => {
         ))}
       </div>
       </div>
+    </div>
+    <footer class="container">
+        <p>2024 findy.wiki</p>
+        <p>
+          Source: <a href="https://t.co/EYSU6uMa1W" target="_blank" rel="noopener noreferrer">116 page pdf</a>
+        </p>
+        <p class="disclaimer">findy.wiki does not claim accuricy of the source pdf. Use at own risk.</p>
+    </footer>
     </div>
   );
 };
